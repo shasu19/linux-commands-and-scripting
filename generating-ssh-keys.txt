@@ -1,0 +1,32 @@
+
+>>>>>>>> Generating SSH keys >>>>>>>>>>>
+
+$ ssh-keygen.exe
+Once we execute the above command, under home directory (/c/Users/sunilsharma/.ssh/id_rsa),
+public and private keys will be generated.
+
+Now we can copy this public to any machine and can directly access.
+
+#================================================================================================
+>>>>>>>>>>>
+Copying public key to any remote machine and accessing machine directly.
+ssh-copy-id -i ~/.ssh/id_rsa/id_rsa.pub user@host
+
+>>>> Example $ssh-copy-id -i ~/.ssh/id_rsa/id_rsa.pub root@google.com/dev/vms/test.learning.net
+
+# now login in same machine
+$ ssh root@ipAddressOfHostMachine
+
+#Now we will be able to login directly.
+Remote machine will not ask for password to type from next time.
+
+Even we can give public key location at time of logging.
+>>>> Example $ssh -i ~/.ssh/id_rsa/id_rsa.pub root@machineIP
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Getting git hub access by uploading the public key file.
+We can upload the SSH key directly in git hub from setting's link and it will work.
+This is needed when we need to generate SSH key and need to upload to github account for
+accessing all repositories.
+
+#================================================================================================
